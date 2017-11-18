@@ -33,3 +33,4 @@
 [Dd]ebug*/
 *.sdf
 ipch/
+*.opensdf
