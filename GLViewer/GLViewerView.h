@@ -14,6 +14,9 @@
 
 #pragma once
 
+#include <CDrawGroup.h>
+#include <CCamera.h>
+
 class CGLViewerView : public CView
 {
 protected: // create from serialization only
@@ -114,6 +117,9 @@ private:
 
 	int		m_nCurX;
 	int		m_nCurY;
+
+	std::shared_ptr<Base3D::CCamera>	m_pCamera;
+	std::shared_ptr<Base3D::CDrawGroup>	m_pSence;
 };
 
 #ifndef _DEBUG  // debug version in GLViewerView.cpp
