@@ -66,5 +66,3 @@
 #include <gl/GLU.h>
 
 #include <vector>
-
-#include <3DBase.h>

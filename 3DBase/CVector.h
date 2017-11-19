@@ -13,6 +13,7 @@ namespace Base3D
 	public:
 		CVector3d();
 		CVector3d(double x, double y, double z);
+		CVector3d(const CVector3d& v);
 
 		CVector3d&	operator+=(const CVector3d& rhs);
 		CVector3d&	operator-=(const CVector3d& rhs);

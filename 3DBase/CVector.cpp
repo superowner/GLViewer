@@ -13,6 +13,13 @@ CVector3d::CVector3d(double x, double y, double z)
 {
 }
 
+CVector3d::CVector3d(const CVector3d & v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
+
 CVector3d & CVector3d::operator+=(const CVector3d & rhs)
 {
 	x += rhs.x;
