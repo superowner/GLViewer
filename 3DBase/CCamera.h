@@ -6,7 +6,7 @@
 #define MY3DBASE_API __declspec(dllimport)
 #endif
 
-#include "CVector.h"
+#include <Eigen/Eigen>
 
 namespace Base3D
 {
@@ -45,19 +45,19 @@ namespace Base3D
 	public:
 		CCamera();
 		CCamera(int nWndWidth, int nWndHeight);
-		CCamera(int nWndWidth, int nWndHeight, const CVector3d& pos, const CVector3d& target, const CVector3d& up);
+		CCamera(int nWndWidth, int nWndHeight, const Eigen::Vector3d& pos, const Eigen::Vector3d& target, const Eigen::Vector3d& up);
 
 		unsigned int	GetWndWidth() { return m_nWndWidth; }
 		void			SetWndWidth(unsigned int nWndWidth) { m_nWndWidth = nWndWidth; }
 		unsigned int	GetWndHeight() { return m_nWndHeight; }
 		void			SetWndHeight(unsigned int nWndHeight) { m_nWndHeight = nWndHeight; }
 
-		CVector3d		GetPos() { return m_Pos; }
-		void			SetPos(const CVector3d& pos) { m_Pos = pos; }
-		CVector3d		GetTarget() { return m_Target; }
-		void			SetTarget(const CVector3d& target) { m_Target = target; }
-		CVector3d		GetUp() { return m_Up; }
-		void			SetUp(const CVector3d& up) { m_Up = up; }
+		Eigen::Vector3d	GetPos() { return m_Pos; }
+		void			SetPos(const Eigen::Vector3d& pos) { m_Pos = pos; }
+		Eigen::Vector3d	GetTarget() { return m_Target; }
+		void			SetTarget(const Eigen::Vector3d& target) { m_Target = target; }
+		Eigen::Vector3d	GetUp() { return m_Up; }
+		void			SetUp(const Eigen::Vector3d& up) { m_Up = up; }
 
 		enum PROJECTION_TYPE
 		{
@@ -72,10 +72,18 @@ namespace Base3D
 		COrthoProjectionInfo&		GetOrthoProjectionInfo() { return m_OrthoProjection; }
 		void						SetOrthoProjectionInfo(const COrthoProjectionInfo& opi) { m_OrthoProjection = opi; }
 
+		Eigen::Matrix4d	GetCameraMatrix();
+
+		const double m_dPI;
+
+	protected:
+		Eigen::Matrix4d	GetPerspectiveCameraMatrix();
+		Eigen::Matrix4d	GetOrthoCameraMatrix();
+
 	private:
-		CVector3d	m_Pos;
-		CVector3d	m_Target;
-		CVector3d	m_Up;
+		Eigen::Vector3d	m_Pos;
+		Eigen::Vector3d	m_Target;
+		Eigen::Vector3d	m_Up;
 
 		unsigned int	m_nWndWidth;
 		unsigned int	m_nWndHeight;
@@ -84,5 +92,8 @@ namespace Base3D
 
 		CPerspectiveProjectionInfo	m_PerspectiveProjection;
 		COrthoProjectionInfo		m_OrthoProjection;
+
+		Eigen::Matrix4d	m_matCamera;
+		bool		m_bDirty;
 	};
 };

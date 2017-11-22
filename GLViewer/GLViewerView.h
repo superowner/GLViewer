@@ -118,8 +118,10 @@ private:
 	int		m_nCurX;
 	int		m_nCurY;
 
-	std::shared_ptr<Base3D::CCamera>	m_pCamera;
-	std::shared_ptr<Base3D::CDrawGroup>	m_pSence;
+	//std::shared_ptr<Base3D::CCamera>	m_pCamera;
+	//std::shared_ptr<Base3D::CDrawGroup>	m_pSence;
+
+	Base3D::CCamera	m_camera;
 };
 
 #ifndef _DEBUG  // debug version in GLViewerView.cpp

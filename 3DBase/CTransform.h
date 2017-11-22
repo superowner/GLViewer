@@ -8,10 +8,9 @@
 
 namespace Base3D
 {
-	// This class is exported from the 3DBase.dll
-	class MY3DBASE_API CQuat {
+	class MY3DBASE_API CTransform
+	{
 	public:
-		CQuat();
-		// TODO: add your methods here.
+		CTransform() {}
 	};
-};
+}

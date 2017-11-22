@@ -152,10 +152,8 @@
     <ClInclude Include="3DBase.h" />
     <ClInclude Include="CBaseDrawObject.h" />
     <ClInclude Include="CCamera.h" />
-    <ClInclude Include="CMatrix.h" />
     <ClInclude Include="CPositionTransform.h" />
-    <ClInclude Include="CQuat.h" />
-    <ClInclude Include="CVector.h" />
+    <ClInclude Include="CTransform.h" />
     <ClInclude Include="CDrawGroup.h" />
     <ClInclude Include="CDrawObject.h" />
     <ClInclude Include="stdafx.h" />
@@ -165,10 +163,7 @@
     <ClCompile Include="3DBase.cpp" />
     <ClCompile Include="CCamera.cpp" />
     <ClCompile Include="CDrawGroup.cpp" />
-    <ClCompile Include="CMatrix.cpp" />
     <ClCompile Include="CPositionTransform.cpp" />
-    <ClCompile Include="CQuat.cpp" />
-    <ClCompile Include="CVector.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

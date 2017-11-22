@@ -10,7 +10,7 @@
 
 namespace Base3D
 {
-	class MY3DBASE_API CBaseDrawObject : public CPositionTransform
+	class MY3DBASE_API CBaseDrawObject
 	{
 
 	};

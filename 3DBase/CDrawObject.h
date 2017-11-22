@@ -7,17 +7,17 @@
 #endif
 
 #include "CBaseDrawObject.h"
-#include "CVector.h"
 
 #include <vector>
+#include <Eigen/Eigen>
 
 namespace Base3D
 {
 	class MY3DBASE_API CDrawObject : public CBaseDrawObject
 	{
 	private:
-		std::vector<CVector3d>	m_Vertex;
-		std::vector<CVector3d>	m_Normal;
-		std::vector<CVector4d>	m_Color;
+		std::vector<Eigen::Vector3d>	m_Vertex;
+		std::vector<Eigen::Vector3d>	m_Normal;
+		std::vector<Eigen::Vector3d>	m_Color;
 	};
 };

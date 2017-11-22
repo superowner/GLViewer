@@ -6,27 +6,29 @@
 #define MY3DBASE_API __declspec(dllimport)
 #endif
 
-#include "CVector.h"
+#include "CTransform.h"
+
+#include <Eigen/Dense>
 
 namespace Base3D
 {
-	class CPositionTransform
+	class MY3DBASE_API CPositionTransform : public CTransform
 	{
 	public:
 		CPositionTransform();
 
-		void		SetPosition(const CVector3d& pos) { m_Position = pos; }
-		CVector3d	GetPosition() { return m_Position; }
+		void		SetPosition(const Eigen::Vector3d& pos) { m_Position = pos; }
+		Eigen::Vector3d	GetPosition() { return m_Position; }
 
-		void		SetScale(const CVector3d& scale) { m_Scale = scale; }
-		CVector3d	GetScale() { return m_Scale; }
+		void		SetScale(const Eigen::Vector3d& scale) { m_Scale = scale; }
+		Eigen::Vector3d	GetScale() { return m_Scale; }
 
-		void		SetRotate(const CVector3d& rotate) { m_Rotate = rotate; }
-		CVector3d	GetRotate() { return m_Rotate; }
+		void		SetRotate(const Eigen::Vector3d& rotate) { m_Rotate = rotate; }
+		Eigen::Vector3d	GetRotate() { return m_Rotate; }
 
 	private:
-		CVector3d	m_Position;
-		CVector3d	m_Scale;
-		CVector3d	m_Rotate;
+		Eigen::Vector3d	m_Position;
+		Eigen::Vector3d	m_Scale;
+		Eigen::Vector3d	m_Rotate;
 	};
 }

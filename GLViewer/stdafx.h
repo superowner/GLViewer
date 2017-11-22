@@ -65,6 +65,9 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
+<<<<<<< HEAD
 #include <vector>
 
+=======
+>>>>>>> tmp
 #include <Eigen/Eigen>

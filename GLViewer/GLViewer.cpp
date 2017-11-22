@@ -23,7 +23,6 @@
 #include "GLViewerView.h"
 
 //#include "3DBase.h"
-#include "CMatrix.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -227,7 +226,7 @@ void CGLViewerApp::PreLoadState()
 
 void CGLViewerApp::LoadCustomState()
 {
-	Base3D::CMatrix3d();
+	
 }
 
 void CGLViewerApp::SaveCustomState()
