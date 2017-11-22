@@ -66,3 +66,5 @@
 #include <gl/GLU.h>
 
 #include <vector>
+
+#include <Eigen/Eigen>
